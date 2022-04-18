@@ -14,13 +14,15 @@ res.sendFile(path.resolve('../web-app/index.html'));
 })
 
 io.on('connection', (socket) => {
-console.log('a user connected');
+    socket.broadcast.emit('Ciao a tutti');
+
     socket.on('disconnect', () => {
         console.log('user disconnected');
     })
 
     socket.on('chat message', (msg) => {
         console.log(`message: ${msg}`);
+        io.emit('chat message', msg);
     });
 });
 
