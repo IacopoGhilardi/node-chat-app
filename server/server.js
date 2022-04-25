@@ -9,9 +9,9 @@ const io = new Server(server);
 
 var path = require('path');
 
-app.get('/', (req, res) => {
-res.sendFile(path.resolve('../web-app/index.html'));
-})
+// app.get('/', (req, res) => {
+// res.sendFile(path.resolve('../web-app/index.html'));
+// })
 
 io.on('connection', (socket) => {
     socket.broadcast.emit('Ciao a tutti');
