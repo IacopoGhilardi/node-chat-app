@@ -1,14 +1,10 @@
 const Login = ({title}) => {
 
-  const prova = () => {
-    console.log('ciao');
-  }
   return (
       <div>
         <h1>Login { title }</h1>
         <div>
             <label htmlFor="email">Email</label>
-            <input type="text" id="email" name="email" />
         </div>
       
         <div>
@@ -18,7 +14,7 @@ const Login = ({title}) => {
 
 
         <div>
-          <button onClick={prova}>Login</button>
+          <button>Login</button>
         </div>
       </div>
   )

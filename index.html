@@ -33,7 +33,6 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (input.value) {
-        console.log('ciao');
         socket.emit('chat message', input.value);
         input.value = '';
       }
