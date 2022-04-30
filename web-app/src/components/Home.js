@@ -6,6 +6,7 @@ export const Home = () => {
     const [message, setMessage] = useState("");
     const [messageReceived, setMessageReceived] = useState("");
 
+    const messages = [];
     const sendMessage = () => {
         socket.emit('chat message', {message});
     }
@@ -13,6 +14,7 @@ export const Home = () => {
     useEffect(() => {
         socket.on('receive_message', (data) => {
             setMessageReceived(data.message)
+            messages.push(data.message);
         })
     }, [socket]);
 
@@ -28,7 +30,7 @@ export const Home = () => {
 
         <div>
             <h2>Messages</h2>
-
+            
             {messageReceived}
         </div>
     </div>
